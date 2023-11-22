@@ -173,10 +173,10 @@ export default function Home() {
               Research for breakfast, Prototyping for lunch, Delivery for dinner.
             </span>
             <span className="flex flex-row gap-4 py-8">
-            <button className="bg-green-400 shadow text-white hover:bg-white hover:text-green-500 flex flex-row justify-center items-center transition duration-175 ease-in-out py-2 px-10 rounded">
+            <Link className="bg-green-400 shadow text-white hover:bg-white hover:text-green-500 flex flex-row justify-center items-center transition duration-175 ease-in-out py-2 text-xl lg:text-2xl px-4 md:px-10 rounded" href="https://www.guycrawford.ca/guycrawford-resume.pdf" target="_blank">
                 Download Resume
-            </button>
-            <Link className="bg-green-400 shadow text-white hover:bg-white hover:text-green-500 flex flex-row justify-center items-center transition duration-175 ease-in-out py-2 px-10 rounded" href="#portfolio">
+            </Link>
+            <Link className="bg-green-400 shadow text-white hover:bg-white hover:text-green-500 flex flex-row justify-center items-center transition duration-175 ease-in-out py-2 text-xl lg:text-2xl px-4 md:px-10 rounded" href="#portfolio">
                 Portfolio
             </Link>
             </span>
