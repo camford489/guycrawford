@@ -160,14 +160,14 @@ export default function Home() {
       <div id="hero" className='items-center h-screen lg:w-screen'>
         <div className='relative top-[40px] md:top-[120px] flex flex-col justify-items-start'>
           <motion.div className='relative md:left-[20%] left-0' variants={textAnimate1} initial="hidden" animate="show">
-            <motion.h1 className={`text-5xl text-[#eaeaea] tracking-tighter font-bold ${pacifico.className}`} variants={textAnimate2} custom={0}>Hi, I'm</motion.h1>
+            <motion.h1 className={`text-5xl text-[#eaeaea] tracking-tighter font-bold ${pacifico.className}`} variants={textAnimate2} custom={0}>Hi, I&apos;m</motion.h1>
           </motion.div>
           <motion.div className='relative md:left-[20%] left-0' variants={textAnimate1} initial="hidden" animate="show">
             <motion.h1 className='text-8xl text-[#eaeaea] tracking-tighter font-bold' variants={textAnimate2} custom={0}>Guy.</motion.h1>
           </motion.div>
           <motion.p className='relative top-[40px] md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full left-0' variants={textParagraph} initial="hidden" animate="show">
             <span className='text-green-200 py-2'>
-            I'm an experienced Full Stack Developer and Digital Lead with a proven track record of driving successful projects.
+            I&apos;m an experienced Full Stack Developer and Digital Lead with a proven track record of driving successful projects.
             </span>
             <span className='text-green-200 py-2'>
               Research for breakfast, Prototyping for lunch, Delivery for dinner.
@@ -241,7 +241,7 @@ export default function Home() {
               Objective:
             </p>
             <p className="text-lg">
-              Use GSAP's animation library to bring life to the website, creating an engaging and interactive experience for the user.
+              Use GSAP&apos;s animation library to bring life to the website, creating an engaging and interactive experience for the user.
             </p>
             <p className="text-lg font-medium pt-4">
               Areas of responsibility:
@@ -258,29 +258,6 @@ export default function Home() {
           </blockquote>
         </div>
       </motion.section>
-        
-        {/* <motion.div className="grid grid-cols-2 md:grid-cols-4 gap-4 absolute inset-x-4 bottom-4" variants={imageAnimate} initial="hidden" ref={ref} animate={controls}>
-          <motion.div className='text-green-200' variants={imageAnimateChild}>
-            <Link href="/">
-            <Image src='/img/img-1.jpg' width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }}className="object-cover rounded-lg saturate-150" />
-            </Link>
-          </motion.div>
-          <motion.div className='text-green-200' variants={imageAnimateChild}>
-            <Link href="/">
-            <Image src='/img/img-2.jpg' width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} className="object-cover rounded-lg saturate-150" />
-            </Link>
-          </motion.div>
-          <motion.div className='text-green-200' variants={imageAnimateChild}>
-            <Link href="/">
-            <Image src='/img/img-3.jpg' width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} className="object-cover rounded-lg saturate-150" />
-            </Link>
-          </motion.div>
-          <motion.div className='text-green-200' variants={imageAnimateChild}>
-            <Link href="/">
-            <Image src='/img/img-2.jpg' width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} className="object-cover rounded-lg saturate-150" />
-            </Link>
-          </motion.div>
-        </motion.div> */}
       </motion.div>
     </main>
   )
