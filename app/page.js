@@ -135,11 +135,10 @@ export default function Home() {
     }
   }, [controls, inView]);
 
-  return (
-    
-    <main className='px-8 bg-gradient-to-b from-black to-slate-800' id='header'>
+  return (   
+    <main className='bg-gradient-to-b from-black to-slate-800' id='header'>
       <div className='sticky top-0 z-10 py-2'>
-        <motion.nav className="flex justify-between items-center py-2" variants={navAnimate} initial="hidden" animate="show">
+        <motion.nav className="flex justify-between items-center px-8  py-2" variants={navAnimate} initial="hidden" animate="show">
           <div className="text-xl font-semibold text-green-200">
             <Link href="./">Guy Crawford</Link>
           </div>
@@ -157,15 +156,15 @@ export default function Home() {
         <Image src="/img/bg.jpg" alt='background' fill priority={true} sizes='(max-width:768px) 33vw, (max-width:1024px) 50vw, 100vw' className='object-cover brightness-40' />
       </motion.div>
 
-      <div id="hero" className='items-center h-screen lg:w-screen'>
+      <div id="hero" className='items-center h-screen w-screen'>
         <div className='relative top-[40px] md:top-[120px] flex flex-col justify-items-start'>
-          <motion.div className='relative md:left-[20%] left-0' variants={textAnimate1} initial="hidden" animate="show">
+          <motion.div className='relative md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full left-0 px-8 md:px-0' variants={textAnimate1} initial="hidden" animate="show">
             <motion.h1 className={`text-5xl text-[#eaeaea] tracking-tighter font-bold ${pacifico.className}`} variants={textAnimate2} custom={0}>Hi, I&apos;m</motion.h1>
           </motion.div>
-          <motion.div className='relative md:left-[20%] left-0' variants={textAnimate1} initial="hidden" animate="show">
+          <motion.div className='relative md:w-2/3 w-full md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full left-0 px-8 md:px-0' variants={textAnimate1} initial="hidden" animate="show">
             <motion.h1 className='text-8xl text-[#eaeaea] tracking-tighter font-bold' variants={textAnimate2} custom={0}>Guy.</motion.h1>
           </motion.div>
-          <motion.p className='relative top-[40px] md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full left-0' variants={textParagraph} initial="hidden" animate="show">
+          <motion.p className='relative top-[40px] md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full px-2 md:px-0' variants={textParagraph} initial="hidden" animate="show">
             <span className='text-green-200 py-2'>
             I&apos;m an experienced Full Stack Developer and Digital Lead with a proven track record of driving successful projects.
             </span>
@@ -184,15 +183,15 @@ export default function Home() {
         </div>
       </div>
       
-      <motion.div id="portfolio" variants={imageAnimate} initial="hidden" ref={ref} animate={controls} className='relative gap-8 py-0 md:py-4 w-full left-0 flex flex-col justify-items-center'>
-      <h2 className='m-auto py-8 flex text-center text-5xl text-[#eaeaea] tracking-tighter font-bold'>
-        Portfolio.
-      </h2>
-      <motion.section variants={imageAnimateChild} initial="hidden" animate="show" className=" w-full lg:w-3/4 bg-slate-100 p-10 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto rounded-md">
+      <motion.div id="portfolio" variants={imageAnimate} initial="hidden" ref={ref} animate={controls} className='relative gap-8 py-0 md:py-4 px-8 md:px-12 lg:px-0 w-full lg:w-3/4 flex flex-col items-center mx-auto justify-items-center'>
+        <h2 className='m-auto py-8 flex text-center text-5xl text-[#eaeaea] tracking-tighter font-bold'>
+          Portfolio.
+        </h2>
+      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className="  bg-slate-100 p-10 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto rounded-md">
         <Link href="https://www.agns.ca" target='_blank'>
         <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/agns.jpg" alt="" width={600} height={600} />
         </Link>
-        <div className="pt-6 md:px-8 text-left space-y-4">
+        <div className="pt-6 md:ml-4 md:px-8 text-left space-y-4">
           <blockquote>
           <p className='m-auto flex text-2xl tracking-tighter font-bold'>
           Art Gallery of Nova Scotia 
@@ -223,11 +222,11 @@ export default function Home() {
           </blockquote>
         </div>
       </motion.section>
-      <motion.section variants={imageAnimateChild} initial="hidden" animate="show" className=" w-full lg:w-3/4 bg-slate-100 p-10 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto rounded-md">
-        <Link href="https://www.agns.ca" target='_blank'>
+      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" bg-slate-100 p-10 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto rounded-md">
+        <Link href="https://www.aliceandsmithmetalab.com/" target='_blank'>
         <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/aliceandsmith.jpg" alt="" width={600} height={600} />
         </Link>
-        <div className="pt-6 md:px-8 text-left space-y-4">
+        <div className="pt-6 md:ml-4 md:px-8 text-left space-y-4">
           <blockquote>
           <p className='m-auto flex text-2xl tracking-tighter font-bold'>
           Alice & Smith Metalab 
@@ -253,7 +252,77 @@ export default function Home() {
             Tech stack 
             </p>
             <p className="text-lg pb-4">
-              Next.js, React, GreenSock,  CD, BitBucket
+              Next.js, React, GreenSock, Docker, CD, BitBucket
+            </p>
+          </blockquote>
+        </div>
+      </motion.section>
+      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" bg-slate-100 p-10 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto rounded-md">
+        <Link href="https://www.braininstitute.ca" target='_blank'>
+        <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/obi.jpg" alt="" width={600} height={600} />
+        </Link>
+        <div className="pt-6 md:ml-4 md:px-8 text-left space-y-4">
+          <blockquote>
+          <p className='m-auto flex text-2xl tracking-tighter font-bold'>
+          Ontario Brain Institute 
+          </p>
+          <div className="text-sky-500 dark:text-sky-400 font-medium py-4">
+            <Link href="https://www.braininstitute.ca/" target='_blank'>
+            braininstitute.ca
+            </Link>
+            </div>
+            <p className="text-lg font-medium">
+              Objective:
+            </p>
+            <p className="text-lg">
+              Update and rebuild the Annual Report template to replace static images with responsive components to meet accessibility requirements.
+            </p>
+            <p className="text-lg font-medium pt-4">
+              Areas of responsibility:
+            </p>
+            <p className="text-lg">
+              After researching CraftCMS Twig templates, rebuild the page to modern responsive and accessible CSS code standards. Restructure the page to serve bilingual content, and to allow for smoother future updates. Coordinate deployment with the client&apos;s hosting provider to ensure a smooth transition.
+            </p>
+            <p className='text-xl pt-4 tracking-tighter font-bold'>
+            Tech stack 
+            </p>
+            <p className="text-lg pb-4">
+              HTML, CSS, JavaScript, CraftCMS, Twig, JQuery, APIs, CD, G-Cloud
+            </p>
+          </blockquote>
+        </div>
+      </motion.section>
+      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" bg-slate-100 p-10 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto rounded-md">
+        <Link href="https://www.efficiencyns.ca/residential/residential-tools-resources/energy-assistance-navigation-tool/" target='_blank'>
+        <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/efficiencyns.jpg" alt="" width={600} height={600} />
+        </Link>
+        <div className="pt-6 md:ml-4 md:px-8 text-left space-y-4">
+          <blockquote>
+          <p className='m-auto flex text-2xl tracking-tighter font-bold'>
+          Efficiency Nova Scotia 
+          </p>
+          <div className="text-sky-500 dark:text-sky-400 font-medium py-4">
+            <Link href="https://www.efficiencyns.ca/residential/residential-tools-resources/energy-assistance-navigation-tool/" target='_blank'>
+              efficiencyns.ca
+            </Link>
+            </div>
+            <p className="text-lg font-medium">
+              Objective:
+            </p>
+            <p className="text-lg">
+              Rapidly research, prototype, and develop a new tool to help Nova Scotians find energy efficiency rebates and programs.
+            </p>
+            <p className="text-lg font-medium pt-4">
+              Areas of responsibility:
+            </p>
+            <p className="text-lg">
+              Research and prototype the tool, and develop the front-end code to style the tool. Present costings and alternative solutions to client. Coordinate with the client to ensure the tool meets their needs, and is delivered on time.
+            </p>
+            <p className='text-xl pt-4 tracking-tighter font-bold'>
+            Tech stack 
+            </p>
+            <p className="text-lg pb-4">
+              HTML, CSS, JavaScript, CD, AWS, Git
             </p>
           </blockquote>
         </div>
