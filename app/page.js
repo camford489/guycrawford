@@ -6,23 +6,12 @@ import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useAnimation, motion } from 'framer-motion'
 import { Pacifico } from 'next/font/google'
+import { initGA, logPageView } from '../analytics';
 
 const pacifico = Pacifico({
   subsets: ['latin'],
   weight: '400',
 })
-
-// const handleScroll = (e) => {
-//   e.preventDefault();
-  
-//   const href = e.currentTarget.href;
-//   const targetId = href.replace(/.*\#/, "");
-  
-//   const elem = document.getElementById(targetId);
-//   elem?.scrollIntoView({
-//     behavior: "smooth",
-//   });
-// }
 
 export default function Home() {
 
@@ -128,12 +117,31 @@ export default function Home() {
     }
   }
 
+  const credsAnimate = {
+    hidden:{
+      opacity:0,
+    },
+    show:{
+      opacity:1,
+      transition:{
+        ease: 'easeInOut',
+        duration:0.8,
+        delay:3,
+      }
+    }
+  }
+
   const controls = useAnimation();
   const [ref, inView] = useInView();
   useEffect(() => {
     if (inView) {
       controls.start("show");
     }
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true;
+    }
+    logPageView();
   }, [controls, inView]);
 
   return (   
@@ -162,7 +170,7 @@ export default function Home() {
           <motion.div className='relative md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full left-0 px-8 md:px-0' variants={textAnimate1} initial="hidden" animate="show">
             <motion.h1 className={`text-5xl text-[#eaeaea] tracking-tighter font-bold ${pacifico.className}`} variants={textAnimate2} custom={0}>Hi, I&apos;m</motion.h1>
           </motion.div>
-          <motion.div className='relative md:w-2/3 w-full md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full left-0 px-8 md:px-0' variants={textAnimate1} initial="hidden" animate="show">
+          <motion.div className='relative md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full left-0 px-8 md:px-0' variants={textAnimate1} initial="hidden" animate="show">
             <motion.h1 className='text-8xl text-[#eaeaea] tracking-tighter font-bold' variants={textAnimate2} custom={0}>Guy.</motion.h1>
           </motion.div>
           <motion.p className='relative top-[40px] md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full px-2 md:px-0' variants={textParagraph} initial="hidden" animate="show">
@@ -182,8 +190,8 @@ export default function Home() {
             </span>
           </motion.p>
         </div>
-        <div className="absolute flex items-center flex-row bottom-4 right-4 md:bottom-8 md:right-8 z-10 text-green-200/60 hover:text-green-200 transition duration-175 ease-in-out text-xs font-thin"><CiCamera /><Link href="https://unsplash.com/@cassidykdickens?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" className="pl-2">Cassidy Dickens</Link>
-        </div>  
+        <motion.div className="absolute flex items-center flex-row bottom-4 right-4 md:bottom-8 md:right-8 z-10 text-green-200/60 hover:text-green-200 transition duration-175 ease-in-out text-xs font-thin" id="portfolio" variants={credsAnimate} initial="hidden" animate="show"><CiCamera /><Link href="https://unsplash.com/@cassidykdickens?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" className="pl-2">Cassidy Dickens</Link>
+        </motion.div>  
       </div>
       
       <motion.div id="portfolio" variants={imageAnimate} initial="hidden" ref={ref} animate={controls} className='relative gap-8 py-0 md:py-4 px-8 md:px-12 lg:px-0 w-full lg:w-2/3 flex flex-col items-center mx-auto justify-items-center'>
