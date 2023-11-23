@@ -208,7 +208,7 @@ export default function Home() {
               Objective:
             </p>
             <p className="text-lg">
-              Use GSAP&apos;s animation library to bring life to the website, creating an engaging and interactive user experience.
+              Bring life to the website, creating an engaging and interactive user experience.
             </p>
             <p className="text-lg font-medium pt-4">
               Areas of responsibility:
