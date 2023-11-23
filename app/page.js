@@ -198,41 +198,7 @@ export default function Home() {
         <h2 className='m-auto py-8 flex text-center text-5xl text-[#eaeaea] tracking-tighter font-bold'>
           Portfolio.
         </h2>
-        <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" bg-white/95 px-10 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto rounded-md">
-        <Link href="https://www.aliceandsmithmetalab.com/" target='_blank'>
-        <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/aliceandsmith.jpg" alt="" width={600} height={600} />
-        </Link>
-        <div className="pt-6 md:ml-4 md:px-8 text-left space-y-4">
-          <blockquote>
-          <p className='m-auto flex text-2xl tracking-tighter font-bold'>
-          Alice & Smith Metalab 
-          </p>
-          <div className="text-sky-500 dark:text-sky-400 font-medium py-4">
-            <Link href="https://www.aliceandsmithmetalab.com/" target='_blank'>
-              aliceandsmithmetalab.com
-            </Link>
-            </div>
-            <p className="text-lg font-medium">
-              Objective:
-            </p>
-            <p className="text-lg">
-              Bring life to the website, creating an engaging and interactive user experience.
-            </p>
-            <p className="text-lg font-medium pt-4">
-              Areas of responsibility:
-            </p>
-            <p className="text-lg">
-              Rebuild, extend and animate sections of the website using scrollTrigger and timeline events from the GSAP animation library.
-            </p>
-            <p className='text-xl pt-4 tracking-tighter font-bold'>
-            Tech stack 
-            </p>
-            <p className="text-lg pb-4">
-              Next.js, React, GreenSock, Docker, CD, BitBucket
-            </p>
-          </blockquote>
-        </div>
-      </motion.section>
+        
       <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" bg-white/95 px-10 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto rounded-md">
         <Link href="https://www.aliceandsmithmetalab.com/" target='_blank'>
         <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/aliceandsmith.jpg" alt="" width={600} height={600} />
