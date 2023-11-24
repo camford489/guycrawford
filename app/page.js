@@ -158,7 +158,7 @@ export default function Home() {
             <motion.h1 className={`text-4xl text-[#eaeaea] tracking-tighter font-bold ${pacifico.className}`} variants={textAnimate2} custom={0}>Hi, I&apos;m</motion.h1>
           </motion.div>
           <motion.div className='relative md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full left-0 px-8 md:px-0' variants={textAnimate1} initial="hidden" animate="show">
-            <motion.h1 className='text-6xl text-[#eaeaea] tracking-tighter font-bold' variants={textAnimate2} custom={0}>Guy Crawford.</motion.h1>
+            <motion.h1 className='text-6xl text-[#eaeaea] tracking-tighter font-bold' variants={textAnimate2} custom={0}>Guy Crawford</motion.h1>
           </motion.div>
           <motion.p className='relative top-[40px] md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full px-8 md:px-0' variants={textParagraph} initial="hidden" animate="show">
             <span className='text-white py-2'>
