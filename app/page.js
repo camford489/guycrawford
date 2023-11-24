@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { CiCamera } from "react-icons/ci"
+import { IoChevronDownOutline } from "react-icons/io5"
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useAnimation, motion } from 'framer-motion'
@@ -20,11 +21,11 @@ export default function Home() {
       clipPath:'polygon(21% 27%, 77% 26%, 77% 77%, 21% 77%)'
     },
     show:{
-      clipPath:'polygon(0 10%, 100% 0, 100% 90%, 0 100%)',
+      clipPath:'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
       transition:{
         ease: 'easeInOut',
         duration:0.8,
-        delay:1,
+        delay:2,
       }
     }
   }
@@ -41,7 +42,7 @@ export default function Home() {
         ease: 'easeInOut',
         duration:0.8,
         staggerChildren:0.4,
-        delayChildren:1.1,
+        delayChildren:2,
       }
     }
   }
@@ -85,25 +86,25 @@ export default function Home() {
     }
   }
 
-  const navAnimate = {
-    hidden:{
-      y:'-100',
-      opacity:0,
-    },
-    show:{
-      y:0,
-      opacity:1,
-      transition:{
-        type: 'spring',
-        stiffness:60,
-        delay:2,
-      }
-    }
-  }
+  // const navAnimate = {
+  //   hidden:{
+  //     y:'-100',
+  //     opacity:0,
+  //   },
+  //   show:{
+  //     y:0,
+  //     opacity:1,
+  //     transition:{
+  //       type: 'spring',
+  //       stiffness:60,
+  //       delay:2,
+  //     }
+  //   }
+  // }
 
   const textParagraph = {
     hidden:{
-      y:'-100%',
+      y:'-20%',
       opacity:0,
     },
     show:{
@@ -112,20 +113,6 @@ export default function Home() {
       transition:{
         type: 'spring',
         stiffness:60,
-        delay:2,
-      }
-    }
-  }
-
-  const credsAnimate = {
-    hidden:{
-      opacity:0,
-    },
-    show:{
-      opacity:1,
-      transition:{
-        ease: 'easeInOut',
-        duration:0.8,
         delay:3,
       }
     }
@@ -145,61 +132,59 @@ export default function Home() {
   }, [controls, inView]);
 
   return (   
-    <main className='bg-gradient-to-b from-black to-slate-800' id='header'>
-      <div className='sticky top-0 z-10 py-2'>
-        <motion.nav className="flex justify-between items-center px-8 py-2 text-green-200" variants={navAnimate} initial="hidden" animate="show">
+    <main className='bg-[#fbfbfb]' id='header'>
+      {/* <div className='sticky top-0 z-10 py-2'>
+        <motion.nav className="flex justify-between items-center px-8 py-2 text-slate-800" variants={navAnimate} initial="hidden" animate="show">
           <div className="text-xl font-semibold">
             <Link href="./">Guy Crawford</Link>
           </div>
           <ul className='w-[140px] flex justify-between items-center'>
-            {/* <li className='font-semibold'>
+             <li className='font-semibold'>
             <Link href="./">Home</Link>
-            </li> */}
+            </li> 
             <li className='font-semibold'>
               <Link href="./#portfolio">Portfolio</Link>
             </li>
           </ul>
         </motion.nav>
-      </div>
+      </div> */}
       <motion.div className='absolute inset-0 h-screen w-screen z-0' variants={bgAnimate} initial="hidden" animate="show">
-        <Image src="/img/bg.jpg" alt='background' fill priority={true} sizes='(max-width:768px) 33vw, (max-width:1024px) 50vw, 100vw' className='object-cover brightness-40' />
+        <Image src="/img/to_night.jpg" alt='background' fill priority={true} sizes='(max-width:768px) 33vw, (max-width:1024px) 50vw, 100vw' className='object-cover brightness-40' />
       </motion.div>
 
-      <div id="hero" className='items-center h-screen w-screen'>
-        <div className='relative top-[40px] md:top-[120px] flex flex-col justify-items-start'>
+      <div id="hero" className='flex items-center h-screen w-screen'>
+        <div className='relative flex flex-col justify-items-start'>
           <motion.div className='relative md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full left-0 px-8 md:px-0' variants={textAnimate1} initial="hidden" animate="show">
-            <motion.h1 className={`text-5xl text-[#eaeaea] tracking-tighter font-bold ${pacifico.className}`} variants={textAnimate2} custom={0}>Hi, I&apos;m</motion.h1>
+            <motion.h1 className={`text-4xl text-[#eaeaea] tracking-tighter font-bold ${pacifico.className}`} variants={textAnimate2} custom={0}>Hi, I&apos;m</motion.h1>
           </motion.div>
           <motion.div className='relative md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full left-0 px-8 md:px-0' variants={textAnimate1} initial="hidden" animate="show">
-            <motion.h1 className='text-8xl text-[#eaeaea] tracking-tighter font-bold' variants={textAnimate2} custom={0}>Guy.</motion.h1>
+            <motion.h1 className='text-6xl text-[#eaeaea] tracking-tighter font-bold' variants={textAnimate2} custom={0}>Guy Crawford.</motion.h1>
           </motion.div>
-          <motion.p className='relative top-[40px] md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full px-2 md:px-0' variants={textParagraph} initial="hidden" animate="show">
-            <span className='text-green-200 py-2'>
+          <motion.p className='relative top-[40px] md:left-[20%] text-2xl flex flex-col text-semibold md:w-2/3 w-full px-8 md:px-0' variants={textParagraph} initial="hidden" animate="show">
+            <span className='text-white py-2'>
             I&apos;m an experienced Full Stack Developer and Digital Lead with a proven track record of driving successful projects.
             </span>
-            <span className='text-green-200 py-2'>
-              Research for breakfast, Prototyping for lunch, Delivery for dinner.
+            <span className='text-white py-2'>
+              Research for breakfast, Prototypes for lunch, Delivery for dinner.
             </span>
-            <span className="flex flex-row gap-4 py-8">
-            <Link className="bg-green-400 shadow text-white hover:bg-white hover:text-green-500 flex flex-row justify-center items-center transition duration-175 ease-in-out py-2 text-xl lg:text-2xl px-4 md:px-10 rounded" href="https://www.guycrawford.ca/guycrawford-resume.pdf" target="_blank">
+            <span className="flex flex-col w-[300px] gap-4 py-8">
+            <Link className="hover:bg-sky-600 shadow hover:text-white bg-white text-slate-800 flex flex-row justify-center items-center transition duration-175 ease-in-out py-2 text-xl px-4 rounded" href="https://www.guycrawford.ca/guycrawford-resume.pdf" target="_blank">
                 Download Resume
             </Link>
-            <Link className="bg-green-400 shadow text-white hover:bg-white hover:text-green-500 flex flex-row justify-center items-center transition duration-175 ease-in-out py-2 text-xl lg:text-2xl px-4 md:px-10 rounded" href="#portfolio">
-                Portfolio
+            <Link className=" text-white flex flex-row justify-center items-center transition duration-200 ease-in-out py-4 text-xl px-4" href="#portfolio">
+                View Portfolio&nbsp;<IoChevronDownOutline className='hover:top-2' />
             </Link>
             </span>
           </motion.p>
-        </div>
-        <motion.div className="absolute flex items-center flex-row bottom-4 right-4 md:bottom-8 md:right-8 z-10 text-green-200/60 hover:text-green-200 transition duration-175 ease-in-out text-xs font-thin" id="portfolio" variants={credsAnimate} initial="hidden" animate="show"><CiCamera /><Link href="https://unsplash.com/@cassidykdickens?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" className="pl-2">Cassidy Dickens</Link>
-        </motion.div>  
+        </div> 
       </div>
       
-      <motion.div id="portfolio" variants={imageAnimate} initial="hidden" ref={ref} animate={controls} className='relative gap-8 py-0 md:py-4 px-8 md:px-12 lg:px-0 w-full lg:w-2/3 flex flex-col items-center mx-auto justify-items-center'>
-        <h2 className='m-auto py-8 flex text-center text-5xl text-[#eaeaea] tracking-tighter font-bold'>
+      <motion.div id="portfolio" variants={imageAnimate} initial="hidden" ref={ref} animate={controls} className='relative gap-8 p-8 lg:px-4 w-full md:3/4 lg:w-2/3 flex flex-col items-center mx-auto justify-items-center'>
+        <h2 className='m-auto flex pt-8 text-center text-5xl text-slate-800 tracking-tighter font-bold'>
           Portfolio.
         </h2>
-        
-      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" bg-white/95 px-10 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto rounded-md">
+      <div className="divide-y divide-slate-800/25 md:divide-solid"> 
+      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" px-4 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto">
         <Link href="https://www.aliceandsmithmetalab.com/" target='_blank'>
         <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/aliceandsmith.jpg" alt="" width={600} height={600} />
         </Link>
@@ -208,7 +193,7 @@ export default function Home() {
           <p className='m-auto flex text-2xl tracking-tighter font-bold'>
           Alice & Smith Metalab 
           </p>
-          <div className="text-sky-500 dark:text-sky-400 font-medium py-4">
+          <div className="text-sky-600 font-medium py-4">
             <Link href="https://www.aliceandsmithmetalab.com/" target='_blank'>
               aliceandsmithmetalab.com
             </Link>
@@ -234,7 +219,7 @@ export default function Home() {
           </blockquote>
         </div>
       </motion.section>
-      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className="  bg-white/95 px-10 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto rounded-md">
+      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className="  px-4 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto">
         <Link href="https://www.agns.ca" target='_blank'>
         <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/agns.jpg" alt="" width={600} height={600} />
         </Link>
@@ -243,7 +228,7 @@ export default function Home() {
           <p className='m-auto flex text-2xl tracking-tighter font-bold'>
           Art Gallery of Nova Scotia 
           </p>
-          <div className="text-sky-500 dark:text-sky-400 font-medium py-4">
+          <div className="text-sky-600 font-medium py-4">
             <Link href="https://www.agns.ca" target='_blank'>
               AGNS.ca
             </Link>
@@ -269,7 +254,7 @@ export default function Home() {
           </blockquote>
         </div>
       </motion.section>
-      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" bg-white/95 px-10 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto rounded-md">
+      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" px-4 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto">
         <Link href="https://www.braininstitute.ca" target='_blank'>
         <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/obi.jpg" alt="" width={600} height={600} />
         </Link>
@@ -278,7 +263,7 @@ export default function Home() {
           <p className='m-auto flex text-2xl tracking-tighter font-bold'>
           Ontario Brain Institute 
           </p>
-          <div className="text-sky-500 dark:text-sky-400 font-medium py-4">
+          <div className="text-sky-600 font-medium py-4">
             <Link href="https://www.braininstitute.ca/" target='_blank'>
             braininstitute.ca
             </Link>
@@ -304,7 +289,7 @@ export default function Home() {
           </blockquote>
         </div>
       </motion.section>
-      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" bg-white/95 px-10 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto rounded-md">
+      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" px-4 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto">
         <Link href="https://www.efficiencyns.ca/residential/residential-tools-resources/energy-assistance-navigation-tool/" target='_blank'>
         <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/efficiencyns.jpg" alt="" width={600} height={600} />
         </Link>
@@ -313,7 +298,7 @@ export default function Home() {
           <p className='m-auto flex text-2xl tracking-tighter font-bold'>
           Efficiency Nova Scotia 
           </p>
-          <div className="text-sky-500 dark:text-sky-400 font-medium py-4">
+          <div className="text-sky-600 font-medium py-4">
             <Link href="https://www.efficiencyns.ca/residential/residential-tools-resources/energy-assistance-navigation-tool/" target='_blank'>
               efficiencyns.ca
             </Link>
@@ -339,6 +324,7 @@ export default function Home() {
           </blockquote>
         </div>
       </motion.section>
+      </div>
       </motion.div>
     </main>
   )
