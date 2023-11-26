@@ -291,7 +291,7 @@ export default function Home() {
       </motion.section>
       <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" px-4 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto">
         <Link href="https://flaxandblazer.com/parallax/" target='_blank'>
-        <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/weather.jpg" alt="" width={600} height={600} />
+        <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/parallax.jpg" alt="" width={600} height={600} />
         </Link>
         <div className="pt-6 md:ml-4 md:px-8 text-left space-y-4">
           <blockquote>
