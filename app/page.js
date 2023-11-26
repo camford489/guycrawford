@@ -180,9 +180,10 @@ export default function Home() {
       </div>
       
       <motion.div id="portfolio" variants={imageAnimate} initial="hidden" ref={ref} animate={controls} className='relative gap-8 p-8 lg:px-4 w-full md:w-5/6 lg:w-3/4 flex flex-col items-center mx-auto justify-items-center'>
+
         <h2 className='m-auto flex pt-8 text-center text-5xl text-slate-800 tracking-tighter font-bold'>
           Portfolio.
-        </h2>
+        </h2>   
       <div className="divide-y divide-slate-800/25 md:divide-solid"> 
       <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" px-4 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto">
         <Link href="https://www.aliceandsmithmetalab.com/" target='_blank'>
