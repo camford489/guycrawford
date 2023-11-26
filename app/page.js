@@ -179,7 +179,7 @@ export default function Home() {
         </div> 
       </div>
       
-      <motion.div id="portfolio" variants={imageAnimate} initial="hidden" ref={ref} animate={controls} className='relative gap-8 p-8 lg:px-4 w-full md:3/4 lg:w-2/3 flex flex-col items-center mx-auto justify-items-center'>
+      <motion.div id="portfolio" variants={imageAnimate} initial="hidden" ref={ref} animate={controls} className='relative gap-8 p-8 lg:px-4 w-full md:w-5/6 lg:w-3/4 flex flex-col items-center mx-auto justify-items-center'>
         <h2 className='m-auto flex pt-8 text-center text-5xl text-slate-800 tracking-tighter font-bold'>
           Portfolio.
         </h2>
@@ -219,6 +219,41 @@ export default function Home() {
           </blockquote>
         </div>
       </motion.section>
+      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" px-4 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto">
+        <Link href="https://weather-app-one-orcin.vercel.app/" target='_blank'>
+        <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/weather.jpg" alt="" width={600} height={600} />
+        </Link>
+        <div className="pt-6 md:ml-4 md:px-8 text-left space-y-4">
+          <blockquote>
+          <p className='m-auto flex text-2xl tracking-tighter font-bold'>
+          How's Your Weather?
+          </p>
+          <div className="text-sky-600 font-medium py-4">
+            <Link href="https://weather-app-one-orcin.vercel.app/" target='_blank'>
+              howsyourweather.ca
+            </Link>
+            </div>
+            <p className="text-lg font-medium">
+              Objective:
+            </p>
+            <p className="text-lg">
+              Conduct research into weather APIs, and develop an easy to use weather app.
+            </p>
+            <p className="text-lg font-medium pt-4">
+              Areas of responsibility:
+            </p>
+            <p className="text-lg">
+              Research and develop the web app using React, Next.js, and the OpenWeatherMap API. Construct and connect Google Authentication and connect the web app to storage to retrieve favourited cities. Create a responsive design that is easy to use on mobile and desktop devices, and implement it with Chakra UI framework. Deploy the app to Vercel.
+            </p>
+            <p className='text-xl pt-4 tracking-tighter font-bold'>
+            Tech stack 
+            </p>
+            <p className="text-lg pb-4">
+              Next.js, React, Chakra UI, Firebase Authentication, Firestore Database, CD, Git, Vercel
+            </p>
+          </blockquote>
+        </div>
+      </motion.section>
       <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className="  px-4 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto">
         <Link href="https://www.agns.ca" target='_blank'>
         <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/agns.jpg" alt="" width={600} height={600} />
@@ -250,6 +285,41 @@ export default function Home() {
             </p>
             <p className="text-lg pb-4">
               HTML, CSS, JavaScript, PHP, SQL, WordPress, APIs, CD, Git
+            </p>
+          </blockquote>
+        </div>
+      </motion.section>
+      <motion.section variants={imageAnimateChild} initial="hidden" ref={ref} animate={controls} className=" px-4 py-8 dark:bg-slate-800 flex flex-col md:flex-row items-center mx-2 md:mx-auto">
+        <Link href="https://flaxandblazer.com/parallax/" target='_blank'>
+        <Image className="object-cover w-[600px] md:min-w-[300px] h-auto md:min-h-[300px] rounded-xl drop-shadow-md hover:drop-shadow-xl transition duration-175 ease-in-out hover:scale-105" src="/img/weather.jpg" alt="" width={600} height={600} />
+        </Link>
+        <div className="pt-6 md:ml-4 md:px-8 text-left space-y-4">
+          <blockquote>
+          <p className='m-auto flex text-2xl tracking-tighter font-bold'>
+          UCC Landing Page
+          </p>
+          <div className="text-sky-600 font-medium py-4">
+            <Link href="https://flaxandblazer.com/parallax/" target='_blank'>
+              College Parallax prototype
+            </Link>
+            </div>
+            <p className="text-lg font-medium">
+              Objective:
+            </p>
+            <p className="text-lg">
+              Develop a prototype landing page for a college website.
+            </p>
+            <p className="text-lg font-medium pt-4">
+              Areas of responsibility:
+            </p>
+            <p className="text-lg">
+              Identify suitable animation libraries to meet the design requirements and build a working prototype for client review.
+            </p>
+            <p className='text-xl pt-4 tracking-tighter font-bold'>
+            Tech stack 
+            </p>
+            <p className="text-lg pb-4">
+            HTML, CSS, JavaScript, GSAP and Locomotive Scroll animation libraries.
             </p>
           </blockquote>
         </div>
